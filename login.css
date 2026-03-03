@@ -1,0 +1,129 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d6001c, #ffcc00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== MAIN CARD ===== */
+#loginSection,
+#registerSection {
+    background: #ffffff;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+    text-align: center;
+    color: #d6001c;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ===== LABELS ===== */
+label {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+/* ===== INPUTS ===== */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+input:focus {
+    border-color: #d6001c;
+    box-shadow: 0 0 0 2px rgba(214, 0, 28, 0.15);
+}
+
+/* ===== PRIMARY BUTTON ===== */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #d6001c;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button[type="submit"]:hover {
+    background: #b80018;
+    transform: translateY(-1px);
+}
+
+/* ===== SECONDARY BUTTONS ===== */
+button {
+    background: none;
+    border: none;
+    color: #d6001c;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+button:hover {
+    color: #b80018;
+}
+
+/* ===== MESSAGE ===== */
+#msg {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE FRIENDLY ===== */
+@media (max-width: 480px) {
+    #loginSection,
+    #registerSection {
+        margin: 0 15px;
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}

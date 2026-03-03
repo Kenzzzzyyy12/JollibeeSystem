@@ -1,0 +1,105 @@
+
+/* General body */
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background: #fff0f0;
+    color: #333;
+}
+
+/* Heading */
+h1 {
+    color: #d60000; /* Jollibee red */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff9900; /* Jollibee yellow-orange */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input[type="date"] {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #d60000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #a50000;
+}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+th, td {
+    border: 1px solid #d60000;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background-color: #ff9900;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #fff5f5;
+}
+
+tr:hover {
+    background-color: #ffe0e0;
+}
+
+/* Button link */
+a.button-link {
+    background-color: #ffcc00;
+    color: #d60000;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a.button-link:hover {
+    background-color: #ffd633;
+    color: #a50000;
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+    table, tr, td, th {
+        font-size: 12px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+}

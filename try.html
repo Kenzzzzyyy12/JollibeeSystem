@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jollibee Dashboard</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Jollibee Food Ordering Dashboard</h1>
+        <a href="login.html"><button>Login / Register</button></a>
+    </header>
+
+    <!-- Food Menu -->
+    <section id="menu">
+        <h2>Menu</h2>
+
+        <!-- Food display area -->
+        <div id="currentFood">
+            <h3 id="foodName">Chickenjoy</h3>
+            <p>Price: ₱<span id="price">150</span></p>
+            <div>
+                <button onclick="decreaseQuantity()">-</button>
+                <span id="quantity">1</span>
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+            <p>Total: ₱<span id="total">150</span></p>
+            <button onclick="addToCart()">Order</button>
+        </div>
+
+        <!-- Choose Food Dropdown -->
+        <h3>Choose Food to View</h3>
+        <select id="foodSelect" onchange="showFood()">
+            <option value="Chickenjoy">Chickenjoy</option>
+            <option value="Jolly Spaghetti">Jolly Spaghetti</option>
+            <option value="Yum Burger">Yum Burger</option>
+            <option value="Halo-Halo">Halo-Halo</option>
+            <option value="Palabok Fiesta">Palabok Fiesta</option>
+            <option value="Burger Steak">Burger Steak</option>
+            <option value="Coke">Coke</option>
+            <option value="Sundae">Sundae</option>
+        </select>
+    </section>
+
+    <!-- Cart -->
+    <section id="cart">
+        <h2>Cart</h2>
+        <ul id="cartItems"></ul>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
+    <script>
+        const prices = {
+            "Chickenjoy": 150,
+            "Jolly Spaghetti": 120,
+            "Yum Burger": 80,
+            "Halo-Halo": 70,
+            "Palabok Fiesta": 100,
+            "Burger Steak": 90,
+            "Coke": 35,
+            "Sundae": 50
+        };
+
+        let currentFood = "Chickenjoy";
+        let quantity = 1;
+
+        function showFood() {
+            const select = document.getElementById("foodSelect");
+            currentFood = select.value;
+            document.getElementById("foodName").textContent = currentFood;
+            document.getElementById("price").textContent = prices[currentFood];
+            quantity = 1;
+            document.getElementById("quantity").textContent = quantity;
+            updateTotal();
+        }
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById("quantity").textContent = quantity;
+            updateTotal();
+        }
+
+        function decreaseQuantity() {
+            if(quantity > 1) {
+                quantity--;
+                document.getElementById("quantity").textContent = quantity;
+                updateTotal();
+            }
+        }
+
+        function updateTotal() {
+            const total = prices[currentFood] * quantity;
+            document.getElementById("total").textContent = total;
+        }
+
+        function addToCart() {
+            const cartList = document.getElementById("cartItems");
+            const li = document.createElement("li");
+            li.textContent = `${currentFood} x${quantity} - ₱${prices[currentFood] * quantity}`;
+            cartList.appendChild(li);
+            quantity = 1;
+            document.getElementById("quantity").textContent = quantity;
+            updateTotal();
+        }
+
+        function checkout() {
+            const cartList = document.getElementById("cartItems");
+            if(cartList.children.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert("Order placed successfully!");
+                cartList.innerHTML = "";
+            }
+        }
+
+        updateTotal();
+    </script>
+</body>
+</html>

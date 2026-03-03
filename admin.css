@@ -1,0 +1,114 @@
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f8f8;
+    color: #333;
+    padding: 20px;
+}
+h1, h2, h3 {
+    color: #d60000;
+}
+h2 {
+    margin-top: 30px;
+    border-bottom: 3px solid #ffc72c;
+    padding-bottom: 5px;
+}
+
+/* ===== BUTTONS ===== */
+button, .btn {
+    background: #d60000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+button:hover, .btn:hover {
+    background: #a80000;
+}
+a.button-link {
+    text-decoration: none;
+    color: white;
+    background: #d60000;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+a.button-link:hover {
+    background: #a80000;
+}
+
+/* ===== FORMS ===== */
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form input[type="file"] {
+    padding: 6px 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===== TABLES ===== */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+th {
+    background: #d60000;
+    color: white;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+img { max-width: 80px; border-radius: 6px; }
+
+/* ===== STOCK STATUS ===== */
+.out-stock { color: red; font-weight: bold; }
+.in-stock { color: green; font-weight: bold; }
+
+/* ===== ORDER STATUS BADGES ===== */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+.status-badge.Pending { background: orange; }
+.status-badge.Approved { background: green; }
+.status-badge.OnTheWay { background: #007bff; }
+
+/* ===== LOGOUT BUTTON ===== */
+.logout-btn {
+    background: #ffc72c;
+    color: #d60000;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.logout-btn:hover { opacity: 0.8; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    table, form input, form button {
+        width: 100%;
+    }
+    img { max-width: 60px; }
+}
